@@ -9,6 +9,7 @@ import { User } from '../_models/user';
 })
 export class AccountService {
   baseUrl = "https://localhost:5001/api/";
+  // using observable as auth guard subscribes to this observable
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
